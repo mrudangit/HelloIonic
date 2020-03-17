@@ -16,6 +16,21 @@
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+  <ion-button expand="block" (click)="openPicker($event)">CCY</ion-button>
+
+  <ion-grid class="ios">
+    <ion-row id="header">
+      <ion-col>CCY</ion-col>
+      <ion-col>Qty</ion-col>
+      <ion-col>Bid</ion-col>
+      <ion-col>Ask</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let p of rows; let i = index">
+      <ion-col>{{p.Symbol}}</ion-col>
+      <ion-col>{{p.Qty}}</ion-col>
+      <ion-col>{{p.Bid}}</ion-col>
+      <ion-col>{{p.Ask}}</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
