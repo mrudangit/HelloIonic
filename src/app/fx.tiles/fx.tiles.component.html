@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+
+    </ion-buttons>
+    <ion-title size="large">FX Tiles</ion-title>
+    <ion-button slot="end" expand="block" (click)="openPicker($event)">Add CCY</ion-button>
+  </ion-toolbar>
+
+  <ion-toolbar>
+
+   <ion-searchbar></ion-searchbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+
+<!--  <ion-grid class="ios">-->
+<!--    <ion-row class="header">-->
+<!--      <ion-col>CCY</ion-col>-->
+<!--      <ion-col>Qty</ion-col>-->
+<!--      <ion-col>Bid</ion-col>-->
+<!--      <ion-col>Ask</ion-col>-->
+<!--    </ion-row>-->
+<!--    <ion-row *ngFor="let p of rows; let i = index">-->
+<!--      <ion-col>{{p.Symbol}}</ion-col>-->
+<!--      <ion-col>{{p.Qty}}</ion-col>-->
+<!--      <ion-col>{{p.Bid}}</ion-col>-->
+<!--      <ion-col>{{p.Ask}}</ion-col>-->
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+
+  <ion-grid class="ios ion-no-padding" *ngFor="let p of rows; let i = index">
+    <ion-row class="header">
+      <ion-col>
+        <ion-button>{{p.Symbol}}</ion-button>
+        <ion-button color="danger">{{p.Qty}}</ion-button>
+      </ion-col>
+    </ion-row>
+   <ion-row>
+
+     <ion-col  class="ion-align-self-start" >
+
+       <div style="background: lightblue; height: 10em; width: 100%">
+         <ion-label>Buy</ion-label>
+         <ion-label>1002</ion-label>
+       </div>
+     </ion-col>
+     <ion-col class="ion-align-self-end">
+
+         <div style="background: salmon; height: 10em; width: 100%">
+           <ion-label>Sell</ion-label>
+           <ion-label>1002</ion-label>
+         </div>
+
+     </ion-col>
+   </ion-row>
+  </ion-grid>
+</ion-content>

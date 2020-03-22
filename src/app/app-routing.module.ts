@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {FxTilesComponent} from './fx.tiles/fx.tiles.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'folder/Tiles',
     pathMatch: 'full'
+  },
+  {
+    path: 'folder/Tiles',
+    component: FxTilesComponent
   },
   {
     path: 'folder/:id',
